@@ -1,0 +1,392 @@
+/* Center the calculator on the screen */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+}
+
+/* ================ CLASSIC THEME ================ */
+body.classic {
+  background: transparent;
+}
+
+.classic .calculator {
+  background: #e6e7eb;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.25);
+}
+
+.classic .title {
+  color: #111827;
+}
+
+.classic .display {
+  background: #ffffff;
+  border: 2px solid #cfcfd4;
+  color: #111827;
+}
+
+/* Gray number buttons */
+.classic button {
+  background: #d1d5db;
+  color: #111827;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.15s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.classic button:hover {
+  background: #c7c9ce;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+.classic button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* Dark gray number buttons */
+.classic .buttons button:not(.operator):not(.equal):not(.clear) {
+  background: #374151;
+  color: #ffffff;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.18);
+}
+
+.classic .buttons button:not(.operator):not(.equal):not(.clear):hover {
+  background: #2d3748;
+}
+
+.classic .buttons button:not(.operator):not(.equal):not(.clear):active {
+  background: #1f2937;
+  transform: translateY(0);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.16);
+}
+
+/* Charcoal operators and equal */
+.classic .operator,
+.classic .equal {
+  background: #2d2f33;
+  color: #ffffff;
+}
+
+.classic .operator:hover,
+.classic .equal:hover {
+  background: #1f2326;
+}
+
+/* Red clear button */
+.classic .clear {
+  background: #c40000;
+  color: #ffffff;
+}
+
+.classic .clear:hover {
+  background: #a80000;
+}
+
+/* ================ DARK THEME ================ */
+body.dark {
+  background: transparent;
+}
+
+.dark .calculator {
+  background: #0f3460;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.dark .title {
+  color: #e0e0e0;
+}
+
+.dark .display {
+  background: #1a1a2e;
+  border: 2px solid #e94560;
+  color: #fff;
+}
+
+.dark button {
+  background: #16213e;
+  color: #e0e0e0;
+  border: 1px solid #e94560;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.dark button:hover {
+  background: #0f2438;
+  border-color: #ff6b7a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(233, 69, 96, 0.3);
+}
+
+.dark button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.dark .operator,
+.dark .equal {
+  background: #e94560;
+  color: white;
+  border-color: #e94560;
+}
+
+.dark .operator:hover,
+.dark .equal:hover {
+  background: #ff6b7a;
+}
+
+.dark .clear {
+  background: #ff6b6b;
+  color: white;
+  border-color: #ff6b6b;
+}
+
+.dark .clear:hover {
+  background: #ff5252;
+}
+
+/* ================ COLORFUL THEME (RAINBOW) ================ */
+body.colorful {
+  background: transparent;
+}
+
+/* Rainbow gradient background */
+.colorful .calculator {
+  background: linear-gradient(135deg, #ff3b30 0%, #ff9500 14%, #ffcc00 28%, #4cd964 42%, #5ac8fa 56%, #007aff 70%, #5856d6 84%, #ff3b30 100%);
+  box-shadow: 0 20px 50px rgba(90, 40, 120, 0.2);
+}
+
+.colorful .title {
+  color: #111827;
+  font-weight: 700;
+}
+
+.colorful .display {
+  background: #ffffff;
+  border: 2px solid rgba(0,0,0,0.06);
+  color: #111827;
+}
+
+/* Rainbow buttons with animated gradient */
+.colorful button {
+  background: linear-gradient(90deg, #ff3b30 0%, #ff9500 16%, #ffcc00 33%, #4cd964 50%, #5ac8fa 66%, #007aff 83%, #5856d6 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  transition: background-position 0.4s ease, transform 0.15s ease, box-shadow 0.15s ease;
+  background-size: 300% 100%;
+  background-position: 0% 0%;
+  box-shadow: 0 6px 18px rgba(90, 40, 120, 0.08);
+}
+
+.colorful button:hover {
+  background-position: 100% 0%;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(90, 40, 120, 0.12);
+}
+
+.colorful button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 8px rgba(90, 40, 120, 0.08);
+}
+
+.colorful .operator,
+.colorful .equal {
+  background: linear-gradient(90deg, #ff7a7a 0%, #ffb86b 50%, #7be495 100%);
+  color: #0b1220;
+}
+
+.colorful .operator:hover,
+.colorful .equal:hover {
+  filter: brightness(0.95);
+}
+
+.colorful .clear {
+  background: linear-gradient(90deg, #ff3b30 0%, #ff6250 100%);
+  color: #fff;
+}
+
+.colorful .clear:hover {
+  filter: brightness(0.95);
+}
+
+/* ================ GENERAL STYLES ================ */
+.calculator {
+  width: 300px;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.display {
+  width: 100%;
+  height: 50px;
+  font-size: 24px;
+  text-align: center;
+  padding: 12px 0;
+  margin: 0 auto 15px auto;
+  border-radius: 10px;
+  font-weight: 600;
+  line-height: 50px;
+  box-sizing: border-box;
+}
+
+/* Dropdown for theme selection */
+.theme-dropdown {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  border: 2px solid #999;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.theme-dropdown:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.theme-dropdown:focus {
+  outline: none;
+  border-color: #555;
+  box-shadow: 0 0 5px rgba(85, 85, 85, 0.5);
+}
+
+.classic .theme-dropdown {
+  background: #e5e5e5;
+  color: #333;
+  border-color: #999;
+}
+
+.classic .theme-dropdown:hover {
+  background: #f0f0f0;
+}
+
+.dark .theme-dropdown {
+  background: #3a3a3a;
+  color: #fff;
+  border-color: #666;
+}
+
+.dark .theme-dropdown:hover {
+  background: #4a4a4a;
+}
+
+.dark .theme-dropdown:focus {
+  border-color: #888;
+  box-shadow: 0 0 5px rgba(200, 200, 200, 0.3);
+}
+
+.colorful .theme-dropdown {
+  background: #fff;
+  color: #1e3a5f;
+  border-color: #2d5a8c;
+}
+
+.colorful .theme-dropdown:hover {
+  background: #f5f7fa;
+  border-color: #234578;
+}
+
+/* History section */
+.history-container {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.clear-history {
+  width: 70px;
+  font-size: 12px;
+  cursor: pointer;
+  background: #e8eaed;
+  color: #333;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.clear-history:hover {
+  background: #d0d3d8;
+  transform: translateY(-2px);
+}
+
+body.dark .clear-history {
+  background: #16213e;
+  color: #e0e0e0;
+  border: 1px solid #e94560;
+}
+
+body.dark .clear-history:hover {
+  background: #0f2438;
+}
+
+body.colorful .clear-history {
+  background: #2d5a8c;
+  color: white;
+}
+
+body.colorful .clear-history:hover {
+  background: #234578;
+}
+
+.history {
+  flex: 1;
+  background: #e8eaed;
+  max-height: 80px;
+  overflow-y: auto;
+  font-size: 11px;
+  padding: 8px;
+  border-radius: 8px;
+  color: #333;
+}
+
+body.dark .history {
+  background: #1a1a2e;
+  color: #e0e0e0;
+  border: 1px solid #e94560;
+}
+
+body.colorful .history {
+  background: #f5f7fa;
+  border: 2px solid #2d5a8c;
+  color: #1e3a5f;
+}
+
+/* Button grid */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+button {
+  height: 50px;
+  font-size: 18px;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+

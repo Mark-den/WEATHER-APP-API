@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Set character encoding -->
+  <meta charset="UTF-8">
+  <title>Calculator</title>
+  <!-- Link CSS styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<!-- Start with classic theme by default -->
+<body class="classic">
+
+  <!-- Main calculator box -->
+  <div class="calculator">
+
+    <h2 class="title">Calculator</h2>
+
+    <!-- Dropdown to switch themes -->
+    <select class="theme-dropdown" onchange="setTheme(this.value)">
+      <option value="classic">Classic</option>
+      <option value="dark">Dark</option>
+      <option value="colorful">Colorful</option>
+    </select>
+
+    <!-- Display screen -->
+    <input type="text" id="display" class="display" disabled>
+
+    <!-- Show previous calculations -->
+    <div class="history-container">
+      <button class="clear-history" onclick="clearHistory()">CH</button>
+      <div class="history" id="history"></div>
+    </div>
+
+    <!-- Number and operator buttons in a grid -->
+    <div class="buttons">
+      <!-- Row 1 -->
+      <button onclick="press('7')">7</button>
+      <button onclick="press('8')">8</button>
+      <button onclick="press('9')">9</button>
+      <button class="operator" onclick="press('+')">+</button>
+
+      <!-- Row 2 -->
+      <button onclick="press('4')">4</button>
+      <button onclick="press('5')">5</button>
+      <button onclick="press('6')">6</button>
+      <button class="operator" onclick="press('-')">−</button>
+
+      <!-- Row 3 -->
+      <button onclick="press('1')">1</button>
+      <button onclick="press('2')">2</button>
+      <button onclick="press('3')">3</button>
+      <button class="operator" onclick="press('*')">×</button>
+
+      <!-- Row 4 -->
+      <button class="clear" onclick="clearDisplay()">C</button>
+      <button onclick="press('0')">0</button>
+      <button class="equal" onclick="calculate()">=</button>
+      <button class="operator" onclick="press('/')">÷</button>
+    </div>
+
+  </div>
+
+  <!-- JavaScript code -->
+  <script src="script.js"></script>
+</body>
+</html>
